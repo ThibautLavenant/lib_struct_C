@@ -6,12 +6,12 @@
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
 /*   Created: 2016/09/29 08:30:24 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/09/29 08:30:59 by pi          ##    ##     ##   ######.fr  */
+/*   Updated: 2016/09/29 08:52:01 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		TREE
-	#define	TREE
+#ifndef		TREE_H
+	#define	TREE_H
 
 	#include "cell.h"
 	// A binary tree

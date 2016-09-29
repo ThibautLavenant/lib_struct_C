@@ -6,12 +6,12 @@
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
 /*   Created: 2016/09/29 08:00:08 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/09/29 08:41:22 by pi          ##    ##     ##   ######.fr  */
+/*   Updated: 2016/09/29 08:47:54 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIB_STRUCT_C
-#	define  LIB_STRUCT_C
+#ifndef		LIB_STRUCT_C_H
+#	define  LIB_STRUCT_C_H
 
 #	include "cell.h"
 #include	"stack.h"

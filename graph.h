@@ -6,12 +6,12 @@
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
 /*   Created: 2016/09/29 08:31:11 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/09/29 08:41:21 by pi          ##    ##     ##   ######.fr  */
+/*   Updated: 2016/09/29 08:50:09 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		GRAPH
-	#define	GRAPH
+#ifndef		GRAPH_H
+	#define	GRAPH_H
 
 	#include "cell.h"
 	// A graph

@@ -6,12 +6,12 @@
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
 /*   Created: 2016/09/29 08:27:33 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/09/29 08:28:09 by pi          ##    ##     ##   ######.fr  */
+/*   Updated: 2016/09/29 08:51:05 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIST_DOUBLE
-	#define	LIST_DOUBLE
+#ifndef		LIST_DOUBLE_H
+	#define	LIST_DOUBLE_H
 
 	#include "cell.h"
 	// A dubble chained list

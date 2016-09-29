@@ -6,12 +6,12 @@
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
 /*   Created: 2016/09/29 08:29:40 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/09/29 08:30:11 by pi          ##    ##     ##   ######.fr  */
+/*   Updated: 2016/09/29 08:50:44 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIST_DBLCIR
-	#define	LIST_DBLCIR
+#ifndef		LIST_DBLCIR_H
+	#define	LIST_DBLCIR_H
 
 	#include "cell.h"
 	// A double circular list
