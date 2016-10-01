@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*   lib_struct_C.h                              #######     ###   ######     */
+/*   test.h                                      #######     ###   ######     */
 /*                                               #######    ####   ##  ##     */
 /*   By: pi <thibaut.lavenant@gmail.com>         ##        #  ##   ##         */
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
-/*   Created: 2016/09/29 08:00:08 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/10/01 09:35:50 by pi          ##    ##     ##   ######.fr  */
+/*   Created: 2016/10/01 09:47:21 by pi          ##     ##    ##   ##  ##     */
+/*   Updated: 2016/10/01 16:23:17 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIB_STRUCT_C_H
-#	define  LIB_STRUCT_C_H
+#ifndef		TEST_H
+#	define	TEST_H
 
-#include	"stack.h"
-#include	"queue.h"
-#include	"list_simple.h"
-#include	"list_double.h"
-#include	"list_circular.h"
-#include	"list_circular.h"
-#include	"list_dblcir.h"
-#include	"tree.h"
-#include	"graph.h"
+#define RED		"\x1b[31m"
+#define GREEN	"\x1b[32m"
+#define YELLOW	"\x1b[33m"
+#define BLUE	"\x1b[34m"
+#define MAGENTA	"\x1b[35m"
+#define CYAN	"\x1b[36m"
+#define RESET	"\x1b[0m"
+
+void	test_stack(void);
 
 #endif

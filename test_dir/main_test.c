@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*   lib_struct_C.h                              #######     ###   ######     */
+/*   main_test.c                                 #######     ###   ######     */
 /*                                               #######    ####   ##  ##     */
 /*   By: pi <thibaut.lavenant@gmail.com>         ##        #  ##   ##         */
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
-/*   Created: 2016/09/29 08:00:08 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/10/01 09:35:50 by pi          ##    ##     ##   ######.fr  */
+/*   Created: 2016/10/01 16:22:00 by pi          ##     ##    ##   ##  ##     */
+/*   Updated: 2016/10/01 16:23:00 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIB_STRUCT_C_H
-#	define  LIB_STRUCT_C_H
+#include "test.h"
 
-#include	"stack.h"
-#include	"queue.h"
-#include	"list_simple.h"
-#include	"list_double.h"
-#include	"list_circular.h"
-#include	"list_circular.h"
-#include	"list_dblcir.h"
-#include	"tree.h"
-#include	"graph.h"
+//==============================================================================
 
-#endif
+int		main(void)
+{
+	test_stack();
+	return (0);
+}

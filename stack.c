@@ -6,7 +6,7 @@
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
 /*   Created: 2016/09/29 08:54:13 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/09/29 12:02:29 by pi          ##    ##     ##   ######.fr  */
+/*   Updated: 2016/10/01 16:00:38 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,11 @@ size_t	stack_size(t_stack stack)
 //==============================================================================
 
 // Destroy the whole stack
-void	stack_destroy(t_stack stack, void (*destroy)(void *))
+t_stack	stack_destroy(t_stack stack, void (*destroy)(void *))
 {
-	while (t_stack)
+	while (stack)
 		stack = unstack(stack, destroy);
+	return (stack);
 }
 
 //==============================================================================
