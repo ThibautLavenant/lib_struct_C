@@ -1,81 +1,87 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*   stack.c                                     #######     ###   ######     */
+/*   queue.c                                     #######     ###   ######     */
 /*                                               #######    ####   ##  ##     */
 /*   By: pi <thibaut.lavenant@gmail.com>         ##        #  ##   ##         */
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
-/*   Created: 2016/09/29 08:54:13 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/10/04 15:32:46 by oguona      ##    ##     ##   ######.fr  */
+/*   Created: 2016/10/01 16:46:43 by pi          ##     ##    ##   ##  ##     */
+/*   Updated: 2016/11/22 15:29:02 by oguona      ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "queue.h"
 
 //==============================================================================
 
-// Init a new stack
-t_stack		new_stack()
+// Init a new queue
+t_queue		new_queue()
 {
-	t_stack	stack;
+	t_queue	queue;
 
-	stack = (t_cell_simple **)malloc(sizeof(t_cell_simple*));
-	*stack = NULL;
-	return (stack);
+	queue = (t_queue)malloc(2 * sizeof(t_cell_simple *));
+	queue[0] = NULL;
+	queue[1] = NULL;
+	return (queue);
 }
 
 //==============================================================================
 
-// Stackup a data
-void		stackup(t_stack stack, void *data)
+// enqueue a data
+void		enqueue(t_queue queue, void *data)
 {
 	t_cell_simple	*elem;
 
 	elem = (t_cell_simple*)malloc(sizeof(t_cell_simple));
 	elem->data = data;
-	elem->next = *stack;
-	*stack = elem;
+	elem->next = NULL;
+	queue[0]->next = elem;
+	queue[0] = elem;
+	if (queue[1] == NULL)
+		queue[1] = queue[0];
 }
 
 //==============================================================================
 
-// Unstack a data
-void		unstack(t_stack stack, void (*destroy)(void *))
+// dequeue a data
+void	dequeue(t_queue queue, void (*destroy)(void *))
 {
-	t_cell_simple	*elem;
+	t_cell_simple *elem;
 
-	elem = (*stack)->next;
-	(*destroy)((*stack)->data);
-	free(*stack);
-	*stack = elem;
+	(*destroy)(queue[1]->data);
+	if (queue[0] = queue[1])
+		queue[0] = NULL;
+	elem = queue[1]->next;
+	free(queue[1]);
+	queue[1] = elem;
 }
 
 //==============================================================================
 
 // Read a data
-void	*stack_read(t_stack stack)
+void	*queue_read(t_queue queue)
 {
-	return ((*stack)->data);
+	return (queue[1]->data);
 }
 
 //==============================================================================
 
-// Test if the stack is empty
-char	stack_empty(t_stack stack)
+// Test if the queue is empty
+char	queue_empty(t_queue queue)
 {
-	return (*stack == NULL);
+	return (queue[0] == NULL);
 }
 
 //==============================================================================
 
-// Return the number of elem in the stack
-size_t	stack_size(t_stack stack)
+// Return the number of elem in the queue
+size_t	queue_size(t_queue queue)
 {
 	size_t	size;
 	t_cell_simple	*elem;
 	
 	size = 0;
-	elem = *stack;
+	elem = queue[1];
 	while (elem)
 	{
 		elem = elem->next;
@@ -86,25 +92,27 @@ size_t	stack_size(t_stack stack)
 
 //==============================================================================
 
-// Destroy the whole stack
-void	stack_destroy(t_stack stack, void (*destroy)(void *))
+// Destroy the whole queue
+void	queue_destroy(t_queue queue, void (*destroy)(void *))
 {
-	while (*stack)
-		unstack(stack, destroy);
-	free(stack);
+	while (queue[0])
+		dequeue(queue, destroy);
+	free(queue);
 }
 
 //==============================================================================
 
-// Invert the pile
-void	stack_invert(t_stack stack)
+// Invert the queue
+void	queue_invert(t_queue queue)
 {
 	t_cell_simple	*prev;
 	t_cell_simple	*curr;
 	t_cell_simple	*next;
 
 	prev = NULL;
-	curr = *stack;
+	curr = queue[1];
+	queue[1] = queue[0];
+	queue[0] = curr;
 	while (curr)
 	{
 		next = curr->next;
@@ -112,5 +120,6 @@ void	stack_invert(t_stack stack)
 		prev = curr;
 		curr = next;
 	}
-	*stack = prev;
 }
+
+//==============================================================================

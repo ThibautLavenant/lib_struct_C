@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*   list_circular.h                             #######     ###   ######     */
+/*   tmp.c                                       #######     ###   ######     */
 /*                                               #######    ####   ##  ##     */
 /*   By: pi <thibaut.lavenant@gmail.com>         ##        #  ##   ##         */
 /*   Machine : pi                                ####     ######   ##         */
 /*                                               ####    ##   ##   ##         */
-/*   Created: 2016/09/29 08:28:34 by pi          ##     ##    ##   ##  ##     */
-/*   Updated: 2016/10/04 22:36:50 by oguona      ##    ##     ##   ######.fr  */
+/*   Created: 2016/10/04 13:44:48 by pi          ##     ##    ##   ##  ##     */
+/*   Updated: 2016/10/04 14:01:45 by pi          ##    ##     ##   ######.fr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIST_CIRCULAR_H
-	#define	LIST_CIRCULAR_H
+#include <stdio.h>
+#include <unistd.h>
 
-	#include "cell.h"
-	// A circular list
-	typedef t_cell_simple		*t_list_circular;
+void	affiche(const char *str)
+{
+	int i;
 
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	write(1, &str, 1);
+}
+
+int 	main(void)
+{
+	affiche(@"test 1\n""test2\n");
+	return (0);
+}
